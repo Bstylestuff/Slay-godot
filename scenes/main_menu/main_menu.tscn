@@ -1,0 +1,292 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/main_menu/scripts/ui-main_menu.gd" type="Script" id=1]
+[ext_resource path="res://scenes/main_menu/player_entry.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.5
+margin_top = 122.0
+margin_right = 270.5
+margin_bottom = 430.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer"]
+margin_top = 266.0
+margin_right = 541.0
+margin_bottom = 366.0
+rect_min_size = Vector2( 0, 100 )
+text = "Host Game"
+
+[node name="Host_Button" type="TouchScreenButton" parent="Control/VBoxContainer/Button2"]
+modulate = Color( 0.92549, 0, 0, 1 )
+scale = Vector2( 27.09, 5 )
+shape = SubResource( 1 )
+shape_visible = false
+visibility_mode = 1
+
+[node name="JoinUI" type="Button" parent="Control/VBoxContainer"]
+margin_top = 374.0
+margin_right = 541.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 0, 100 )
+text = "Join Game"
+
+[node name="Join_Button" type="TouchScreenButton" parent="Control/VBoxContainer/JoinUI"]
+modulate = Color( 0.92549, 0, 0, 1 )
+scale = Vector2( 27.09, 5 )
+shape = SubResource( 1 )
+shape_visible = false
+visibility_mode = 1
+
+[node name="Button3" type="Button" parent="Control/VBoxContainer"]
+margin_top = 482.0
+margin_right = 541.0
+margin_bottom = 582.0
+grow_vertical = 2
+rect_min_size = Vector2( 0, 100 )
+text = "Quit Game"
+
+[node name="Quit_Button" type="TouchScreenButton" parent="Control/VBoxContainer/Button3"]
+modulate = Color( 0.992157, 1, 0, 1 )
+scale = Vector2( 27.09, 5 )
+shape = SubResource( 1 )
+shape_visible = false
+visibility_mode = 1
+
+[node name="New_Player_Dialog" type="PopupDialog" parent="Control"]
+margin_left = -489.0
+margin_top = -496.0
+margin_right = -31.0
+margin_bottom = 55.0
+rect_scale = Vector2( 2.27898, 1.75864 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/New_Player_Dialog"]
+anchor_right = 1.0
+anchor_bottom = 0.992
+margin_left = 3.0
+margin_top = 2.0
+margin_right = -3.0
+margin_bottom = -0.0960083
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/New_Player_Dialog/VBoxContainer"]
+margin_right = 452.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="Control/New_Player_Dialog/VBoxContainer/HBoxContainer"]
+margin_top = 8.0
+margin_right = 89.0
+margin_bottom = 22.0
+text = "Your name is?"
+align = 1
+
+[node name="Player_Name_TextEdit" type="TextEdit" parent="Control/New_Player_Dialog/VBoxContainer/HBoxContainer"]
+modulate = Color( 0.12549, 0.945098, 0.964706, 1 )
+margin_left = 93.0
+margin_right = 443.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 350, 30 )
+highlight_current_line = true
+
+[node name="Enter_Name_UIButton" type="Button" parent="Control/New_Player_Dialog/VBoxContainer"]
+modulate = Color( 0.898039, 1, 0, 1 )
+margin_top = 34.0
+margin_right = 452.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 100 )
+text = "Alright, bro"
+
+[node name="Enter_Name_Button" type="TouchScreenButton" parent="Control/New_Player_Dialog/VBoxContainer/Enter_Name_UIButton"]
+scale = Vector2( 22.72, 4.96 )
+shape = SubResource( 2 )
+shape_visible = false
+
+[node name="HostingDialogue" type="PopupDialog" parent="Control"]
+margin_left = 398.328
+margin_top = 43.2222
+margin_right = 856.328
+margin_bottom = 594.222
+rect_scale = Vector2( 2.27898, 1.75864 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HostingDialogue"]
+anchor_right = 1.0
+anchor_bottom = 0.992
+margin_left = 3.0
+margin_top = 2.0
+margin_right = -4.0
+margin_bottom = -0.592041
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/HostingDialogue/VBoxContainer"]
+margin_right = 451.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+text = "Waiting for your mates"
+align = 1
+valign = 1
+
+[node name="VBox_PlayerList" type="VBoxContainer" parent="Control/HostingDialogue/VBoxContainer"]
+margin_top = 54.0
+margin_right = 451.0
+margin_bottom = 94.0
+
+[node name="Player_Entry" parent="Control/HostingDialogue/VBoxContainer/VBox_PlayerList" instance=ExtResource( 2 )]
+
+[node name="Start_GameUI" type="Button" parent="Control/HostingDialogue/VBoxContainer"]
+modulate = Color( 0.898039, 1, 0, 1 )
+margin_top = 98.0
+margin_right = 451.0
+margin_bottom = 198.0
+rect_min_size = Vector2( 0, 100 )
+text = "Start_Game"
+
+[node name="StartGame_Button" type="TouchScreenButton" parent="Control/HostingDialogue/VBoxContainer/Start_GameUI"]
+scale = Vector2( 22.72, 4.96 )
+shape = SubResource( 2 )
+shape_visible = false
+
+[node name="host_menu_Dialog" type="PopupDialog" parent="Control"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 681.0
+margin_top = 234.0
+margin_right = -642.0
+margin_bottom = -259.0
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/host_menu_Dialog"]
+anchor_right = 1.0
+anchor_bottom = 0.995
+margin_bottom = -0.0600586
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/host_menu_Dialog/VBoxContainer"]
+margin_right = 597.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/host_menu_Dialog/VBoxContainer/HBoxContainer"]
+margin_left = 246.0
+margin_top = 12.0
+margin_right = 351.0
+margin_bottom = 37.0
+text = "HOSTING"
+align = 1
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/host_menu_Dialog/VBoxContainer"]
+margin_top = 58.0
+margin_right = 597.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 0, 50 )
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/host_menu_Dialog/VBoxContainer/HBoxContainer2"]
+margin_left = 76.0
+margin_top = 12.0
+margin_right = 213.0
+margin_bottom = 37.0
+text = "Game Name"
+align = 1
+valign = 1
+
+[node name="game_name_text" type="LineEdit" parent="Control/host_menu_Dialog/VBoxContainer/HBoxContainer2"]
+margin_left = 221.0
+margin_right = 521.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/host_menu_Dialog/VBoxContainer"]
+margin_top = 116.0
+margin_right = 597.0
+margin_bottom = 166.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/host_menu_Dialog/VBoxContainer/HBoxContainer3"]
+margin_left = 179.0
+margin_top = 12.0
+margin_right = 310.0
+margin_bottom = 37.0
+text = "Max Players"
+align = 1
+valign = 1
+
+[node name="player_count" type="HSlider" parent="Control/host_menu_Dialog/VBoxContainer/HBoxContainer3"]
+margin_left = 318.0
+margin_right = 418.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+min_value = 2.0
+max_value = 10.0
+value = 2.0
+
+[node name="HSeparator" type="HSeparator" parent="Control/host_menu_Dialog/VBoxContainer"]
+margin_top = 174.0
+margin_right = 597.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Button" type="Button" parent="Control/host_menu_Dialog/VBoxContainer"]
+margin_top = 232.0
+margin_right = 597.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 0, 100 )
+text = "Start Hosting"
+
+[node name="start_hosting_button" type="TouchScreenButton" parent="Control/host_menu_Dialog/VBoxContainer/Button"]
+position = Vector2( 0.28479, 6.5502 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Control"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+process_mode = 0
+[connection signal="pressed" from="Control/VBoxContainer/Button2" to="Control" method="_on_Button2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button2/Host_Button" to="Control" method="_on_Host_Button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/JoinUI" to="Control" method="_on_JoinUI_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/JoinUI/Join_Button" to="Control" method="_on_Join_Button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button3/Quit_Button" to="Control" method="_on_Quit_Button_pressed"]
+[connection signal="pressed" from="Control/New_Player_Dialog/VBoxContainer/Enter_Name_UIButton" to="Control" method="_on_Enter_Name_UIButton_pressed"]
+[connection signal="pressed" from="Control/New_Player_Dialog/VBoxContainer/Enter_Name_UIButton/Enter_Name_Button" to="Control" method="_on_Enter_Name_Button_pressed"]
+[connection signal="pressed" from="Control/host_menu_Dialog/VBoxContainer/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/host_menu_Dialog/VBoxContainer/Button/start_hosting_button" to="Control" method="_on_start_hosting_button_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Player_Entry" type="HBoxContainer"]
+margin_right = 451.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Name" type="Label" parent="."]
+margin_right = 380.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 380, 40 )
+text = "Player Name"
+align = 1
+valign = 1
+
+[node name="KickButton" type="Button" parent="."]
+margin_left = 384.0
+margin_right = 450.0
+margin_bottom = 40.0
+text = "Kick Out"
+align = 2

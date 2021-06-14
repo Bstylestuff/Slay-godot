@@ -2,6 +2,8 @@ extends Node
 
 var current_scene = null
 
+var COLORS={"green":[50,255,0], "dark_blue":[5,0,255], "red":[255,0,0], "purple":[157,0,255], "pink":[255,0,255], 
+	"orange":[255,150,0],"emerald":[0,250,180],"black":[0,0,0]}
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)

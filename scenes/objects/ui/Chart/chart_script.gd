@@ -402,8 +402,8 @@ func compute_ordinate_values(max_value, min_value):
 			ratio = computed_ratio
 			ordinate_values = []
 
-			for index in range(-6, 6):
-				ordinate_values.push_back(5 * index * computed_ratio / ordinary_factor)
+		for index1 in range(-6, 6):
+			ordinate_values.push_back(5 * index * computed_ratio / ordinary_factor)
 
   # Keep only valid values
 	for value in ordinate_values:

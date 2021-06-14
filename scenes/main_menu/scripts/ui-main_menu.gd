@@ -144,7 +144,7 @@ func _on_Host_Button_pressed():
 
 func _on_Join_Button_pressed():
 	#pass
-	Globals.goto_scene("res://scenes/objects/game/game_scene.tscn")
+	Globals.goto_scene("res://scenes/objects/game/gameScene.tscn")
 
 
 func _on_Enter_Name_Button_pressed():
